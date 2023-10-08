@@ -2,18 +2,19 @@ import React, { useState } from "react";
 import { View, TextInput, Text, TouchableOpacity } from "react-native";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import FontistoIcon from "react-native-vector-icons/Fontisto";
-import Entypo from 'react-native-vector-icons/Entypo';
+import Entypo from "react-native-vector-icons/Entypo";
 import { styles } from "./style";
 
 const Input = () => {
-  const [userName, setUserName] = useState('');
-  const [password, setPassword] = useState('');
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
   };
-
+  console.log("userName: " + userName);
+  console.log("password: " + password);
   return (
     <View style={styles.container}>
       <View style={styles.input1}>
@@ -41,8 +42,9 @@ const Input = () => {
           onPress={toggleShowPassword}
         />
       </View>
-      <TouchableOpacity onPress={() => alert(`UserName: ${userName}, Password: ${password}`)}>
-      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => alert(`UserName: ${userName}, Password: ${password}`)}
+      ></TouchableOpacity>
     </View>
   );
 };
